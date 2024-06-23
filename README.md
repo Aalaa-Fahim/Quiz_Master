@@ -9,6 +9,7 @@
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Screenshots](#screenshots)
 - [Contact](#contact)
 
 ## Introduction
@@ -75,6 +76,15 @@ To get a local copy up and running, follow these steps:
 3. **Start a Quiz:** Choose from a variety of quizzes on different topics.
 4. **Receive Feedback:** Get real-time feedback on your answers.
 5. **Track Progress:** View your performance analytics and leaderboard standings.
+
+## Screenshots
+
+Here are some screenshots of the QuizMaster App:
+
+### Home Page
+![Home Page](images/QuizMaster_home1.JPG)
+
+![Home Page](images/QuizMaster_home2.JPG)
 
 ## Contact
 
