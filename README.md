@@ -1,1 +1,1 @@
-# QuizMaster app
+# QuizMaster app project
