@@ -7,4 +7,4 @@ pip3 install flask-login
 pip3 install flask-wtf
 pip install email_validator
 to exit env : deactivate
-try to push only line 4 installed 
+try to push only 
