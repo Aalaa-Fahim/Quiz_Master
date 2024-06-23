@@ -1,1 +1,1 @@
-# QuizMaster app first
+# QuizMaster app
