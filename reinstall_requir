@@ -1,0 +1,7 @@
+Recreating the Virtual Environment:
+
+    When another developer clones your repository, they can recreate the virtual environment and install the exact dependencies by running:
+
+*python -m venv env      # Create a new virtual environment (if it doesn't exist)
+*source env/bin/activate # Activate the virtual environment (on macOS and Linux)
+*pip install -r requirements.txt   # Install dependencies from requirements.txt
