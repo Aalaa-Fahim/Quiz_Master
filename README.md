@@ -80,5 +80,5 @@ To get a local copy up and running, follow these steps:
 
 For any inquiries or issues, please contact:
 
-- **Aalaa Fahim:** [GitHub Profile](https://github.com/Aalaa-Fahim)
-- **Reham Saeed:** [GitHub Profile](https://github.com/reham128)
+- **Aalaa Fahim:** [GitHub Profile](https://github.com/Aalaa-Fahim) | [Linkedin](https://www.linkedin.com/in/aalaa-fahim)
+- **Reham Saeed:** [GitHub Profile](https://github.com/reham128) | [Linkedin](http://www.linkedin.com/in/reham-bahaa)
