@@ -26,7 +26,7 @@
     <nav class="navbar">
       <div class="logo">
         <a class="navbar-brand" href="home">
-          <img src="app/static/images/logo.png" alt="QuizMaster" width="30" height="24">
+          <img src="./app/static/images/logo.png" alt="QuizMaster" width="30" height="24">
         </a>
       </div>
       <ul>
@@ -71,9 +71,9 @@
         <a href="#contact">Contact Information</a>
       </div>
       <div class="social-media">
-        <a href="https://facebook.com"><img src="app/static/images/facebook.png" alt="Facebook"></a>
-        <a href="https://twitter.com"><img src="app/static/images/twitter.png" alt="Twitter"></a>
-        <a href="https://linkedin.com"><img src="app/static/images/linkedin.png" alt="Linkedin"></a>
+        <a href="https://facebook.com"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"></a>
+        <a href="https://twitter.com"><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter"></a>
+        <a href="https://linkedin.com"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="Linkedin"></a>
       </div>
     </div>
   </footer>
