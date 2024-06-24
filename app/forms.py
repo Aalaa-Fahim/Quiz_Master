@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User
 from flask_login import current_user
@@ -57,3 +57,11 @@ class UpdateForm(FlaskForm):
             if user:
                 raise ValidationError('This email is alredy exist!.')
 
+class QuizSelectCatForm(FlaskForm):
+    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Math', 'Math')], validators=[DataRequired()])
+    submit_btn = SubmitField('Start Quiz')
+
+
+class QuizForm(FlaskForm):
+    answer = SelectField('Answer', choices=[], validators=[DataRequired()])
+    submit = SubmitField('Submit')
