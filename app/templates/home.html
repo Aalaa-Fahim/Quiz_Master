@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <div class="intro">
+    <h1>Welcome to QuizMaster</h1>
+    <p>Challenge Your Knowledge with Fun and Engaging Quizzes!</p>
+  </div>
+
+  <div class="about">
+    <div class="about-text">
+      <h2>About QuizMaster</h2>
+      <p>QuizMaster is designed to provide an engaging and interactive platform for users to test their knowledge on
+        various topics.
+        <br /> Whether you are looking to challenge yourself or compete with others, QuizMaster has something for
+        everyone.
+        Challenge yourself with our diverse range of quizzes and track your progress with detailed analytics.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='images/welcome.jpg') }}" alt="About QuizMaster">
+    </div>
+  </div>
+
+  <div id="features" class="features">
+    <div class="feature">
+      <img src="{{ url_for('static', filename='images/solving.jpg') }}" alt="Personalized Quizzes">
+      <h3>Personalized Quizzes</h3>
+      <p>Create and take quizzes that match your interests and learning needs.</p>
+    </div>
+    <div class="feature">
+      <img src="{{ url_for('static', filename='images/feedback.jpg') }}" alt="Real-Time Feedback">
+      <h3>Real-Time Feedback</h3>
+      <p>Receive instant feedback on your answers to enhance your learning.</p>
+    </div>
+    <div class="feature">
+      <img src="{{ url_for('static', filename='images/progress.jpg') }}" alt="Performance Analytics">
+      <h3>Performance Analytics</h3>
+      <p>Track your progress with detailed performance reports and analytics.</p>
+    </div>
+    <div class="feature">
+      <img src="{{ url_for('static', filename='images/leaderboard.jpg') }}" alt="Leaderboard">
+      <h3>Competitive Leaderboard</h3>
+      <p>Join millions of users and test your knowledge across various topics.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="#start-quiz">Start a Quiz Now</a>
+    <p>Discover, Play, and Master Quizzes!</p>
+  </div>
+</div>
+{% endblock %}
