@@ -82,9 +82,9 @@ To get a local copy up and running, follow these steps:
 Here are some screenshots of the QuizMaster App:
 
 ### Home Page
-![Home Page](images/QuizMaster_home1.JPG)
+![Home Page](app/static/images/QuizMaster_home1.JPG)
 
-![Home Page](images/QuizMaster_home2.JPG)
+![Home Page](app/static/images/QuizMaster_home2.JPG)
 
 ## Contact
 
