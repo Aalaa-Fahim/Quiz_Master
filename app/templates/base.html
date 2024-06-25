@@ -31,13 +31,14 @@
       </div>
       <ul>
 	<li><a href="#home">Home</a></li>
+	<a aria-current="page" href="{{ url_for('home') }}">Home</a>
         <li><a href="#features">Leaderboard</a></li>
         <li><a href="#quiz">Quizzes</a></li>
         <li><a href="#contact">Contact us</a></li>
       </ul>
       <div class="auth-buttons">
         <a aria-current="page" href="{{ url_for('home') }}">Home</a>
-        {% if current_user.is_authenticated %}
+        <!-- {% if current_user.is_authenticated %} -->
         <a href="{{ url_for('account') }}">Account</a>
         <a href="{{ url_for('logout') }}">Logout</a>
         {% else %}
