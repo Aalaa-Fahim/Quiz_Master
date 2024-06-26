@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, flash, request
 from app import app, db, bcrypt
-from app.forms import RegistrationForm, LoginForm, UpdateForm, QuizSelectCatForm, QuizForm
-from app.models import User, Quiz, Question, Answer, QuizResult
+from app.forms import RegistrationForm, LoginForm, UpdateForm, QuizSelectCatForm, QuizForm, InputQuestionForm, InputAnswerForm
+from app.models import User, Quiz, Question, Answer, QuizResult, InputQuestion, InputAnswer
 from flask_login import login_required , login_user, logout_user, current_user
 import os
 import uuid
@@ -122,3 +122,28 @@ def calculate_score(form_data, questions):
             if answer and answer.is_correct:
                 score += 1
     return score
+
+@app.route('/add_question', methods=['GET', 'POST'])
+@login_required
+def add_question():
+    form = InputQuestionForm()
+    if form.validate_on_submit():
+        new_question = InputQuestion(text=form.question.data, category=form.category.data, quiz_id=form.quiz_id.data)
+        db.session.add(new_question)
+        db.session.commit()
+        flash('Question added successfully!', 'success')
+        return redirect(url_for('add_answer', question_id=new_question.id))  # Redirect to add_answer page
+    return render_template('add_question.html', title='Add Question', form=form)
+
+
+@app.route('/add_answer/<int:question_id>', methods=['GET', 'POST'])
+@login_required
+def add_answer(question_id):
+    form = InputAnswerForm()
+    if form.validate_on_submit():
+        new_answer = InputAnswer(text=form.answer.data, is_correct=form.is_correct.data, question_id=question_id)
+        db.session.add(new_answer)
+        db.session.commit()
+        flash('Answer added successfully!', 'success')
+        return redirect(url_for('add_answer', question_id=question_id))  # Redirect to add_answer page again
+    return render_template('add_answer.html', title='Add Answer', form=form, submitted=request.method == 'POST')

@@ -32,12 +32,13 @@ class Quiz(db.Model):
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)
-    quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'), nullable=False)
+    category = db.Column(db.String(50), nullable=False)
+    quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'), nullable=True)
     answers = db.relationship('Answer', backref='question', lazy=True)
 
     def __repr__(self):
-        return f'<Question {self.text[:50]}...>'
-
+        return f"Question('{self.text}', '{self.category}')"
+    
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)
@@ -56,3 +57,20 @@ class QuizResult(db.Model):
 
     def __repr__(self):
         return f'<QuizResult User: {self.user_id}, Quiz: {self.quiz_id}, Score: {self.score}>'
+
+class InputQuestion(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f'<InputQuestion {self.text}>'
+
+class InputAnswer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    is_correct = db.Column(db.Boolean, nullable=False)
+    question_id = db.Column(db.Integer, db.ForeignKey('input_question.id'), nullable=False)
+
+    def __repr__(self):
+        return f'<InputAnswer {self.text}, Correct: {self.is_correct}>'

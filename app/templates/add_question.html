@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <h1>Add Question</h1>
+  <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url_for('add_question') }}"
+    enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.quiz_id }}
+    <fieldset class="form-group">
+      <legend>Question Details</legend>
+
+      <div class="form-group">
+        {{ form.question.label(class="form-control-label") }}
+        {% if form.question.errors %}
+        {{ form.question(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.question.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.question(class="form-control") }}
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.category.label(class="form-control-label") }}
+        {% if form.category.errors %}
+        {{ form.category(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.category.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.category(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info")}}
+      </div>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}

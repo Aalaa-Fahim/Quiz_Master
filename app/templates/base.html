@@ -30,7 +30,7 @@
         </a>
       </div>
       <ul>
-	<li><a aria-current="page" href="{{ url_for('home') }}">Home</a></li>
+        <li><a aria-current="page" href="{{ url_for('home') }}">Home</a></li>
         <li><a href="#features">Leaderboard</a></li>
         <li><a href="#quiz">Quizzes</a></li>
         <li><a href="#contact">Contact us</a></li>
@@ -38,6 +38,7 @@
       <div class="auth-buttons">
         <!-- <a aria-current="page" href="{{ url_for('home') }}">Home</a> -->
         {% if current_user.is_authenticated %}
+        <a href="{{ url_for('add_question') }}">Add Questiont</a>
         <a href="{{ url_for('account') }}">Account</a>
         <a href="{{ url_for('logout') }}">Logout</a>
         {% else %}
@@ -72,9 +73,12 @@
         <a href="#contact">Contact Information</a>
       </div>
       <div class="social-media">
-        <a href="https://facebook.com"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"></a>
-        <a href="https://twitter.com"><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter"></a>
-        <a href="https://linkedin.com"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="Linkedin"></a>
+        <a href="https://facebook.com"><img src="{{ url_for('static', filename='images/facebook.png') }}"
+            alt="Facebook"></a>
+        <a href="https://twitter.com"><img src="{{ url_for('static', filename='images/twitter.png') }}"
+            alt="Twitter"></a>
+        <a href="https://linkedin.com"><img src="{{ url_for('static', filename='images/linkedin.png') }}"
+            alt="Linkedin"></a>
       </div>
     </div>
   </footer>

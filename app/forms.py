@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField, TextAreaField, HiddenField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from app.models import User
+from app.models import User, Quiz, Question, Answer, QuizResult, InputQuestion, InputAnswer
 from flask_login import current_user
 
 
@@ -65,3 +65,14 @@ class QuizSelectCatForm(FlaskForm):
 class QuizForm(FlaskForm):
     answer = SelectField('Answer', choices=[], validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class InputQuestionForm(FlaskForm):
+    question = TextAreaField('Question', validators=[DataRequired()])
+    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Math', 'Math')], validators=[DataRequired()])
+    quiz_id = HiddenField('Quiz ID', validators=[DataRequired()])
+    submit = SubmitField('Add Question')
+
+class InputAnswerForm(FlaskForm):
+    answer = StringField('Answer', validators=[DataRequired()])
+    is_correct = BooleanField('Is Correct Answer')
+    submit = SubmitField('Add Answer')

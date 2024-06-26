@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <h1>Add Answer</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      {{ form.answer.label(class="form-label") }}
+      {% if form.answer.errors %}
+      {{ form.answer(class="form-control is-invalid") }}
+      <div class="invalid-feedback">
+        {% for error in form.answer.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% else %}
+      {{ form.answer(class="form-control") }}
+      {% endif %}
+      <div class="form-check">
+        {{ form.is_correct(class="form-check-input") }}
+        <label class="form-check-label">Is Correct Answer?</label>
+        <div class="form-group">
+          {{ form.submit(class="btn btn-outline-info")}}
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit Answer</button>
+  </form>
+</div>
+{% endblock %}
