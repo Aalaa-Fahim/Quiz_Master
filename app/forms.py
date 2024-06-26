@@ -20,12 +20,12 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
-            raise ValidationError('This username is alredy exist!.')
+            raise ValidationError('This username already exists!')
         
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
-            raise ValidationError('This email is alredy exist!.')
+            raise ValidationError('This email already exists!')
 
 
 class LoginForm(FlaskForm):
@@ -49,13 +49,13 @@ class UpdateForm(FlaskForm):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
-                raise ValidationError('This username is alredy exist!. Try Again.')
+                raise ValidationError('This username already exists! Try Again.')
         
     def validate_email(self, email):
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
-                raise ValidationError('This email is alredy exist!.')
+                raise ValidationError('This email already exists!')
 
 class QuizSelectCatForm(FlaskForm):
     category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Math', 'Math')], validators=[DataRequired()])
