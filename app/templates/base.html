@@ -43,7 +43,7 @@
       <div class="auth-buttons">
         <!-- <a aria-current="page" href="{{ url_for('home') }}">Home</a> -->
         {% if current_user.is_authenticated %}
-        <a href="{{ url_for('add_question') }}">Add Questiont</a>
+        <a href="{{ url_for('add_question') }}">Start a Quiz</a>
         <a href="{{ url_for('account') }}">Account</a>
         <a href="{{ url_for('logout') }}">Logout</a>
         {% else %}
