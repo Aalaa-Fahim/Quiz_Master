@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(25), index=True, unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
     img = db.Column(db.String(20), nullable=False, default='default.jpg')
-  
+
     def __repr__(self):
         return f'<User {self.username}, {self.email}, {self.img}>'
 
@@ -38,7 +38,7 @@ class Question(db.Model):
 
     def __repr__(self):
         return f"Question('{self.text}', '{self.category}')"
-    
+
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)

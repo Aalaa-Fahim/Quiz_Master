@@ -25,14 +25,14 @@ def login():
     user = User.query.filter_by(email=form.email.data).first()
     if user and bcrypt.check_password_hash(user.password, form.password.data):
       login_user(user, remember=form.remember.data)
-      flash('Login Successfully. Welcome.', 'success')
+      flash('Login Successfully. Welcome!', 'success')
       get_next_page = request.args.get('next')
       if get_next_page:
         return redirect(get_next_page)
       else:
         return redirect(url_for('home'))
     else:
-      flash('Login Failed. Please check email and password', 'danger')
+      flash('Login Failed. Please, check your email and/or password', 'danger')
   return render_template('login.html', title='Login', form=form, submitted=request.method == 'POST')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -45,7 +45,7 @@ def register():
     new_user = User(username=form.username.data, email=form.email.data, password=pw_hash)
     db.session.add(new_user)
     db.session.commit()
-    flash(f'{form.username.data} Account Created Successfully.You can login', 'success')
+    flash(f'{form.username.data} Account Created Successfully. Now, You can login.', 'success')
     return redirect(url_for('login'))
   return render_template('register.html', title='Register', form=form, submitted=request.method == 'POST')
 
@@ -88,7 +88,7 @@ def start_quiz():
         if quiz:
             return redirect(url_for('take_quiz', quiz_id=quiz.id))
         else:
-            flash('No quizzes available in this category.', 'warning')
+            flash('No quizzes are available in this category, yet.', 'warning')
     return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
 
 
