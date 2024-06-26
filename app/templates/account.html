@@ -12,7 +12,7 @@
   <form class="row g-3 needs-validation" novalidate method="POST" , action="" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
-      <legend>Account Informations</legend>
+      <legend>Account Info</legend>
       <div class="form-group">
         {{ form.username.label(class="form-label") }}
         {% if submitted %}
@@ -27,7 +27,7 @@
         {% else %}
         {{ form.username(class="form-control form-control-lg is-valid") }}
         <div class="valid-feedback">
-          Looks good!
+          Saved!
         </div>
         {% endif%}
         {% else %}
@@ -48,7 +48,7 @@
         {% else %}
         {{ form.email(class="form-control form-control-lg is-valid") }}
         <div class="valid-feedback">
-          Looks good!
+          Saved!
         </div>
         {% endif%}
         {% else %}
@@ -69,7 +69,7 @@
         {{ form.submit_btn(class="btn btn-outline-info")}}
       </div>
     </fieldset>
-    <!-- to be continue  try now -->
+    <!-- to continue, try now -->
   </form>
 </div>
 </div>
