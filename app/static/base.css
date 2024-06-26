@@ -182,22 +182,17 @@ footer p {
 
 .footer-links {
   display: flex;
-  /* gap: 20px; */
-  margin-top: 10px;
+  gap: 20px;
 }
 
 .footer-links a {
   color: #f4f4f4;
-  margin: 0 10px;
   text-decoration: none;
 }
 
 .social-media {
   display: flex;
-  /* gap: 15px; */
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+  gap: 15px;
 }
 
 .social-media a img {
