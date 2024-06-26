@@ -12,7 +12,7 @@
 }
 
 .main-style legend {
-    text-align: center;
+    text-align: left;
     font-size: 2em;
     color: #4B0082;
 }
@@ -27,20 +27,21 @@
 }
 
 .main-style .form-control-lg {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #E6E6FA;
     color: #333;
+    border-color: #9370DB;
 }
 
-.main-style .form-control-lg.is-invalid {
+/* .main-style .form-control-lg.is-invalid {
     border-color: #dc3545;
 }
 
 .main-style .form-control-lg.is-valid {
     border-color: #28a745;
-}
+}*/
 
 .main-style .form-check-input {
     margin-right: 10px;
