@@ -1,95 +1,89 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    /* background-color: #E6E6FA;
-    color: #333; */
-    background-color: #2C2C2C;
-    color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    max-width: 400px;
-    width: 100%;
-    background-color: #3B3B3B;
+.main-style {
+    max-width: 500px;
+    margin: 100px auto 50px;
     padding: 40px;
+    background-color: #D8BFD8;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.container h1 {
+.main-style fieldset {
+    border: none;
+}
+
+.main-style legend {
     text-align: center;
+    font-size: 2em;
+    color: #4B0082;
+}
+
+.main-style .form-group {
     margin-bottom: 20px;
-    color: #a370ebfa;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.main-style .form-control-label {
+    font-size: 1.1em;
+    color: #333;
 }
 
-form label {
-    margin-bottom: 10px;
-    color: #bca4ddfa;
-}
-
-form input[type="text"],
-form input[type="password"] {
+.main-style .form-control-lg {
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #4B4B4B;
-    color: #f4f4f4;
+    background-color: #E6E6FA;
+    color: #333;
 }
 
-form input[type="text"]::placeholder,
-form input[type="password"]::placeholder {
-    color: #b6adc2fa;
+.main-style .form-control-lg.is-invalid {
+    border-color: #dc3545;
 }
 
-form button {
-    padding: 10px;
+.main-style .form-control-lg.is-valid {
+    border-color: #28a745;
+}
+
+.main-style .form-check-input {
+    margin-right: 10px;
+}
+
+.main-style .form-check-label {
+    color: #333;
+}
+
+.main-style .btn-outline-info {
+    background-color: #9370DB;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #a370ebfa;
-    color: white;
-    font-size: 1em;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #8a5cd6;
+.main-style .btn-outline-info:hover {
+    background-color: #8364C9;
 }
 
-.links {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.links a {
-    color: #a370ebfa;
+.main-style .text-muted a {
+    color: #4B0082;
     text-decoration: none;
-    margin: 0 10px;
 }
 
-.links a:hover {
+.main-style .text-muted a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 20px;
-    }
+.border-top {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    text-align: center;
+}
 
-    form input[type="text"],
-    form input[type="password"],
-    form button {
-        padding: 8px;
-    }
+.border-top .text-muted a {
+    color: #4B0082;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.border-top .text-muted a:hover {
+    text-decoration: underline;
 }
