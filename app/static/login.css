@@ -1,5 +1,5 @@
 .main-style {
-    max-width: 600px;
+    max-width: 500px;
     margin: 100px auto 50px;
     padding: 40px;
     background-color: #D8BFD8;
@@ -34,6 +34,7 @@
     color: #333;
     border-color: #9370DB;
     width: 100%;
+    max-width: 100%;
 }
 
 /* .main-style .form-control-lg.is-invalid {
@@ -100,7 +101,6 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: fixed;
 }
 
 footer p {
