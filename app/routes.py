@@ -77,7 +77,7 @@ def account():
 def logout():
   logout_user()
   return redirect(url_for('home'))
-
+"""
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
@@ -90,23 +90,22 @@ def start_quiz():
         else:
             flash('No quizzes are available in this category, yet.', 'warning')
     return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
-
-@app.route('/quiz_categories', methods=['GET', 'POST'])
+"""
+@app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
-def quiz_categories():
-    return render_template('quiz_categories.html')
+def start_quiz():
+    form = QuizSelectCatForm()
+    if form.validate_on_submit():
+        selected_category = form.category.data
+        return redirect(url_for('quiz_categories', category=selected_category))
+    return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
 
-@app.route('/quiz1', methods=['GET', 'POST'])
-def quiz1():
-    return render_template('quiz1.html')
+@app.route('/quiz_categories/<string:category>', methods=['GET'])
+@login_required
+def quiz_categories(category):
+    quizzes = Quiz.query.filter_by(category=category).all()
+    return render_template('quiz_categories.html', category=category, quizzes=quizzes)
 
-@app.route('/quiz2', methods=['GET', 'POST'])
-def quiz2():
-    return render_template('quiz2.html')
-
-@app.route('/quiz3', methods=['GET', 'POST'])
-def quiz3():
-    return render_template('quiz3.html')
 
 @app.route('/take_quiz/<int:quiz_id>', methods=['GET', 'POST'])
 @login_required
