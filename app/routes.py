@@ -78,7 +78,6 @@ def logout():
   logout_user()
   return redirect(url_for('home'))
 
-"""
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
@@ -90,7 +89,7 @@ def start_quiz():
             return redirect(url_for('take_quiz', quiz_id=quiz.id))
         else:
             flash('No quizzes are available in this category, yet.', 'warning')
-    return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST') """
+    return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
 
 @app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required
