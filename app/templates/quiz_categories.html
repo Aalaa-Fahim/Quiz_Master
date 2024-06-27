@@ -4,9 +4,9 @@
 <div class="container">
     <h1>Choose a Quiz Category</h1>
     <div class="quiz-buttons">
-        <a href="{{ url_for('quiz1') }}" class="btn btn-primary">Category 1</a>
-        <a href="{{ url_for('quiz2') }}" class="btn btn-primary">Category 2</a>
-        <a href="{{ url_for('quiz3') }}" class="btn btn-primary">Category 3</a>
+        {% for quiz in quizzes %}
+        <a href="{{ url_for('take_quiz', quiz_id=quiz.id) }}" class="btn btn-primary">{{ quiz.title }}</a>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
