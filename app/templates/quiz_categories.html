@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <h1>Choose a Quiz Category</h1>
+    <div class="quiz-buttons">
+        <a href="{{ url_for('quiz1') }}" class="btn btn-primary">Category 1</a>
+        <a href="{{ url_for('quiz2') }}" class="btn btn-primary">Category 2</a>
+        <a href="{{ url_for('quiz3') }}" class="btn btn-primary">Category 3</a>
+    </div>
+</div>
+{% endblock %}
