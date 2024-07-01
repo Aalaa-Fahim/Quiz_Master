@@ -38,6 +38,11 @@ header {
     color: #333;
 }
 
+.card-text {
+    margin: 15px 0;
+    color: #555;
+}
+
 .btn-primary {
     background-color: #9370DB;
     border: none;
