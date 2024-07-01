@@ -21,14 +21,11 @@
         {{ form.username(class="form-control form-control-lg is-invalid input-group has-validation") }}
         <div class="invalid-feedback">
           {% for e in form.username.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.username(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Saved!
-        </div>
+        {{ form.username(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.username(class="form-control form-control-lg") }}
@@ -42,14 +39,11 @@
         {{ form.email(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.email.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.email(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Saved!
-        </div>
+        {{ form.email(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.email(class="form-control form-control-lg") }}
@@ -69,9 +63,7 @@
         {{ form.submit_btn(class="btn btn-outline-info")}}
       </div>
     </fieldset>
-    <!-- to continue, try now -->
   </form>
 </div>
 </div>
 {% endblock %}
-

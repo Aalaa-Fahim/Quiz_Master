@@ -16,14 +16,11 @@
         {{ form.email(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.email.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.email(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Saved!
-        </div>
+        {{ form.email(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.email(class="form-control form-control-lg") }}
@@ -36,14 +33,11 @@
         {{ form.password(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.password.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.password(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Not right!
-        </div>
+        {{ form.password(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.password(class="form-control form-control-lg") }}

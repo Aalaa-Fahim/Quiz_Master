@@ -13,14 +13,11 @@
         {{ form.username(class="form-control form-control-lg is-invalid input-group has-validation") }}
         <div class="invalid-feedback">
           {% for e in form.username.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.username(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Not Valid!
-        </div>
+        {{ form.username(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.username(class="form-control form-control-lg") }}
@@ -34,14 +31,11 @@
         {{ form.email(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.email.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.email(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Saved
-        </div>
+        {{ form.email(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.email(class="form-control form-control-lg") }}
@@ -54,14 +48,11 @@
         {{ form.password(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.password.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
         {{ form.password(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Enter your password.
-        </div>
         {% endif%}
         {% else %}
         {{ form.password(class="form-control form-control-lg") }}
@@ -74,14 +65,11 @@
         {{ form.password_confirm(class="form-control form-control-lg is-invalid") }}
         <div class="invalid-feedback">
           {% for e in form.password_confirm.errors %}
-          <span>{{ e }}</span>
+          <span class="text-danger">{{ e }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.password_confirm(class="form-control form-control-lg is-valid") }}
-        <div class="valid-feedback">
-          Enter your password.
-        </div>
+        {{ form.password_confirm(class="form-control form-control-lg") }}
         {% endif%}
         {% else %}
         {{ form.password_confirm(class="form-control form-control-lg") }}
@@ -99,4 +87,3 @@
   </small>
 </div>
 {% endblock %}
-
