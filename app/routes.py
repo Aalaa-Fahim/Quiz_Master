@@ -77,7 +77,7 @@ def account():
 def logout():
   logout_user()
   return redirect(url_for('home'))
-"""
+""" Previous code
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
@@ -90,21 +90,6 @@ def start_quiz():
         else:
             flash('No quizzes are available in this category, yet.', 'warning')
     return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
-    
-@app.route('/start_quiz', methods=['GET', 'POST'])
-@login_required
-def start_quiz():
-    form = QuizSelectCatForm()
-    if form.validate_on_submit():
-        selected_category = form.category.data
-        return redirect(url_for('quiz_categories', category=selected_category))
-    return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
-
-@app.route('/quiz_categories/<string:category>', methods=['GET'])
-@login_required
-def quiz_categories(category):
-    quizzes = Quiz.query.filter_by(category=category).all()
-    return render_template('quiz_categories.html', category=category, quizzes=quizzes)
 
 @app.route('/take_quiz/<int:quiz_id>', methods=['GET', 'POST'])
 @login_required
@@ -121,24 +106,18 @@ def take_quiz(quiz_id):
         return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
     return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form)
 
-# A new route for quiz categories
-@app.route('/quiz_categories', methods=['GET', 'POST'])
-@login_required
-def quiz_categories():
-    return render_template('quiz_categories.html')
-"""  
+=> The new added code """
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
     return redirect(url_for('quiz_categories'))
-
+"""
 @app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required
 def quiz_categories():
     categories = ['History', 'Science', 'Programming']
     return render_template('quiz_categories.html', categories=categories)
 
-# new routes for specific category quizzes
 @app.route('/quiz/<string:category>', methods=['GET', 'POST'])
 @login_required
 def quiz_category(category):
@@ -195,7 +174,6 @@ def add_question():
         return redirect(url_for('add_answer', question_id=new_question.id))  # Redirect to add_answer page
     return render_template('add_question.html', title='Add Question', form=form)
 
-
 @app.route('/add_answer/<int:question_id>', methods=['GET', 'POST'])
 @login_required
 def add_answer(question_id):
@@ -207,3 +185,40 @@ def add_answer(question_id):
         flash('Answer added successfully!', 'success')
         return redirect(url_for('add_answer', question_id=question_id))  # Redirect to add_answer page again
     return render_template('add_answer.html', title='Add Answer', form=form, submitted=request.method == 'POST')
+"""
+@app.route('/quiz_categories', methods=['GET', 'POST'])
+@login_required
+def quiz_categories():
+    return render_template('quiz_categories.html')
+
+@app.route('/quiz/<category>', methods=['GET', 'POST'])
+@login_required
+def quiz(category):
+    quiz = Quiz.query.filter_by(category=category).first()
+    if not quiz:
+        flash(f'No quizzes available for {category}.', 'warning')
+        return redirect(url_for('quiz_categories'))
+    form = QuizForm()
+    if request.method == 'POST':
+        score = calculate_score(request.form, quiz.questions)
+        quiz_result = QuizResult(user_id=current_user.id, quiz_id=quiz.id, score=score)
+        db.session.add(quiz_result)
+        db.session.commit()
+        return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
+    return render_template('quiz.html', title=f'{category.capitalize()} Quiz', quiz=quiz, questions=quiz.questions, form=form)
+
+@app.route('/view_score/<int:quiz_result_id>', methods=['GET'])
+@login_required
+def view_score(quiz_result_id):
+    quiz_result = QuizResult.query.get_or_404(quiz_result_id)
+    return render_template('view_score.html', title='Quiz Score', quiz_result=quiz_result)
+
+def calculate_score(form_data, questions):
+    score = 0
+    for question in questions:
+        selected_answer = form_data.get(f'question-{question.id}')
+        if selected_answer:
+            answer = Answer.query.get(int(selected_answer))
+            if answer and answer.is_correct:
+                score += 1
+    return score
