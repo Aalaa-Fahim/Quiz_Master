@@ -58,12 +58,10 @@ header .auth-buttons a {
 }
 
 .flash-message {
-    max-width: 1200px;
-    margin: 70px auto 20px;
-    padding: 15px 20px;
+    margin-top: 10px;
+    padding: 20px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
