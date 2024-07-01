@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block title %}Quiz Categories{% endblock %}
-
-{% block content %}
+{% block body %}
 <div class="container mt-5">
     <h1 class="text-center">Choose a Quiz Category</h1>
     <div class="row mt-4">
@@ -14,6 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">History</h5>
+                    <p class="card-text">Test your knowledge of historical events, significant dates, and notable figures from around the world.</p>
                     <a href="{{ url_for('quiz_category', category='history') }}" class="btn btn-primary">Start Quiz</a>
                 </div>
             </div>
@@ -22,6 +22,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Science</h5>
+                    <p class="card-text">Explore the wonders of science, including physics, chemistry, biology, and scientific discoveries.</p>
                     <a href="{{ url_for('quiz_category', category='science') }}" class="btn btn-primary">Start Quiz</a>
                 </div>
             </div>
@@ -30,6 +31,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Programming</h5>
+                    <p class="card-text">Challenge yourself with questions on programming languages, algorithms, data structures, and software development.</p>
                     <a href="{{ url_for('quiz_category', category='programming') }}" class="btn btn-primary">Start Quiz</a>
                 </div>
             </div>
@@ -37,4 +39,3 @@
     </div>
 </div>
 {% endblock %}
-
