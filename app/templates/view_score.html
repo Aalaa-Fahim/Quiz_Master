@@ -12,7 +12,7 @@
     <h1>Quiz Score</h1>
     <p>User: {{ quiz_result.user_id }}</p>
     <p>Quiz ID: {{ quiz_result.quiz_id }}</p>
-    <p>Score: {{ quiz_result.score }}</p>
+    <p>Score: {{ quiz_result.score }} / {{ quiz_result.quiz.questions|length }}</p>
     <p>Date Taken: {{ quiz_result.date_taken }}</p>
   </div>
 
