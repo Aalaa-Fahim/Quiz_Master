@@ -10,7 +10,7 @@ class RegistrationForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=4, max=12)])
     email = StringField('Email address',
-                        validators=[DataRequired(), Email(), Length(min=14, max=25)])
+                        validators=[DataRequired(), Email(), Length(min=14, max=30)])
     password = PasswordField('Password',
                              validators=[DataRequired(), Length(min=4, max=16)])
     password_confirm = PasswordField('Confirm Password',
@@ -30,7 +30,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = StringField('Email address',
-                        validators=[DataRequired(), Email(), Length(min=14, max=25)])
+                        validators=[DataRequired(), Email(), Length(min=14, max=30)])
     password = PasswordField('Password',
                              validators=[DataRequired(), Length(min=4, max=16)])
     remember = BooleanField('Remember me')
@@ -41,7 +41,7 @@ class UpdateForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=4, max=12)])
     email = StringField('Email address',
-                        validators=[DataRequired(), Email(), Length(min=14, max=25)])
+                        validators=[DataRequired(), Email(), Length(min=14, max=30)])
     profile_pic = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit_btn = SubmitField('Update')
 
@@ -55,10 +55,10 @@ class UpdateForm(FlaskForm):
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
-                raise ValidationError('This email already exists!')
+                raise ValidationError('This email already exists! Try Again.')
 
 class QuizSelectCatForm(FlaskForm):
-    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Math', 'Math')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Programming', 'Programming')], validators=[DataRequired()])
     submit_btn = SubmitField('Start Quiz')
 
 
@@ -68,7 +68,7 @@ class QuizForm(FlaskForm):
 
 class InputQuestionForm(FlaskForm):
     question = TextAreaField('Question', validators=[DataRequired()])
-    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Math', 'Math')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Programming', 'Programming')], validators=[DataRequired()])
     quiz_id = HiddenField('Quiz ID', validators=[DataRequired()])
     submit = SubmitField('Take a quiz')
 
