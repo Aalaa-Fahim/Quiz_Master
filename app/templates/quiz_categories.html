@@ -3,12 +3,34 @@
 {% block title %}Quiz Categories{% endblock %}
 
 {% block content %}
-<div class="container">
-        <h1>Select a Quiz Category</h1>
-        <div class="quiz-buttons">
-            {% for category in categories %}
-            <a href="{{ url_for('take_quiz', category=category) }}" class="btn btn-primary">{{ category }}</a>
-            {% endfor %}
+<div class="container mt-5">
+    <h1 class="text-center">Choose a Quiz Category</h1>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">History</h5>
+                    <a href="{{ url_for('quiz_category', category='history') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
         </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Science</h5>
+                    <a href="{{ url_for('quiz_category', category='science') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Programming</h5>
+                    <a href="{{ url_for('quiz_category', category='programming') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
