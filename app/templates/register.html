@@ -19,7 +19,7 @@
         {% else %}
         {{ form.username(class="form-control form-control-lg is-valid") }}
         <div class="valid-feedback">
-          Saved!
+          Not Valid!
         </div>
         {% endif%}
         {% else %}
@@ -40,7 +40,7 @@
         {% else %}
         {{ form.email(class="form-control form-control-lg is-valid") }}
         <div class="valid-feedback">
-          Not valid!
+          Saved
         </div>
         {% endif%}
         {% else %}
@@ -80,7 +80,7 @@
         {% else %}
         {{ form.password_confirm(class="form-control form-control-lg is-valid") }}
         <div class="valid-feedback">
-          Enter another password.
+          Enter your password.
         </div>
         {% endif%}
         {% else %}
@@ -95,7 +95,7 @@
 </div>
 <div class="border-top pt-3">
   <small class="text-muted">
-    If You already have an account, Please<a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+    If you already have an account, Please<a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
   </small>
 </div>
 {% endblock %}
