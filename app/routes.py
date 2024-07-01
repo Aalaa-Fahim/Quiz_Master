@@ -120,19 +120,19 @@ def take_quiz(quiz_id):
         db.session.commit()
         return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
     return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form)
-"""
+
 # A new route for quiz categories
 @app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required
 def quiz_categories():
     return render_template('quiz_categories.html')
-  
+"""  
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
     return redirect(url_for('quiz_categories'))
 
-@app.route('/quiz_categories', methods=['GET'])
+@app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required
 def quiz_categories():
     categories = ['History', 'Science', 'Programming']
@@ -149,7 +149,7 @@ def quiz_category(category):
         flash('No quizzes are available in this category, yet.', 'warning')
         return redirect(url_for('quiz_categories'))
 
-""" @app.route('/take_quiz/<string:category>', methods=['GET', 'POST'])
+@app.route('/take_quiz/<string:category>', methods=['GET', 'POST'])
 @login_required
 def take_quiz(category):
     quizzes = Quiz.query.filter_by(category=category).all()
@@ -165,7 +165,7 @@ def take_quiz(category):
         db.session.add(quiz_result)
         db.session.commit()
         return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
-    return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form) """
+    return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form)
 
 @app.route('/view_score/<int:quiz_result_id>', methods=['GET'])
 @login_required
