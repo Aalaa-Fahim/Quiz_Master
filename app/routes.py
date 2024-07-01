@@ -90,7 +90,7 @@ def start_quiz():
         else:
             flash('No quizzes are available in this category, yet.', 'warning')
     return render_template('start_quiz.html', title='Start Quiz', form=form, submitted=request.method == 'POST')
-"""
+    
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
@@ -106,7 +106,6 @@ def quiz_categories(category):
     quizzes = Quiz.query.filter_by(category=category).all()
     return render_template('quiz_categories.html', category=category, quizzes=quizzes)
 
-
 @app.route('/take_quiz/<int:quiz_id>', methods=['GET', 'POST'])
 @login_required
 def take_quiz(quiz_id):
@@ -115,6 +114,35 @@ def take_quiz(quiz_id):
     form = QuizForm()
     if request.method == 'POST':
         # Logic to calculate the score based on user's answers
+        score = calculate_score(request.form, questions)
+        quiz_result = QuizResult(user_id=current_user.id, quiz_id=quiz.id, score=score)
+        db.session.add(quiz_result)
+        db.session.commit()
+        return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
+    return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form)
+"""
+@app.route('/start_quiz', methods=['GET', 'POST'])
+@login_required
+def start_quiz():
+    return redirect(url_for('quiz_categories'))
+
+@app.route('/quiz_categories', methods=['GET'])
+@login_required
+def quiz_categories():
+    categories = ['History', 'Science', 'Programming']
+    return render_template('quiz_categories.html', categories=categories)
+
+@app.route('/take_quiz/<string:category>', methods=['GET', 'POST'])
+@login_required
+def take_quiz(category):
+    quizzes = Quiz.query.filter_by(category=category).all()
+    if not quizzes:
+        flash('No quizzes are available in this category yet.', 'warning')
+        return redirect(url_for('quiz_categories'))
+    quiz = quizzes[0]  # Assume we take the first quiz available in the category
+    questions = quiz.questions
+    form = QuizForm()
+    if request.method == 'POST':
         score = calculate_score(request.form, questions)
         quiz_result = QuizResult(user_id=current_user.id, quiz_id=quiz.id, score=score)
         db.session.add(quiz_result)
