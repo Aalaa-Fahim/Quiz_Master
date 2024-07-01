@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField, TextAreaField, HiddenField
+from wtforms import StringField, PasswordField, SubmitField, RadioField, BooleanField, SelectField, TextAreaField, HiddenField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User, Quiz, Question, Answer, QuizResult, InputQuestion, InputAnswer
 from flask_login import current_user
