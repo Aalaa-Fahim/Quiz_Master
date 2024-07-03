@@ -1,8 +1,7 @@
 .media {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .account-img {
@@ -14,7 +13,7 @@
 
 .main-style {
     max-width: 500px;
-    margin: 100px auto 50px;
+    margin: 150px auto 50px;
     padding: 40px;
     background-color: #D8BFD8;
     border-radius: 10px;
@@ -30,6 +29,7 @@
     font-size: 1.5em;
     color: #4B0082;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .main-style .form-group {
@@ -37,7 +37,7 @@
 }
 
 .main-style .form-control-label {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #333;
 }
 
