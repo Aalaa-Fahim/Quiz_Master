@@ -1,27 +1,8 @@
-/* body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-header {
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-*/
 .media {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .account-img {
@@ -58,7 +39,6 @@ header {
 .main-style .form-control-label {
     font-size: 1.1em;
     color: #333;
-    font-weight: bold;
 }
 
 .main-style .form-control-lg {
@@ -78,6 +58,10 @@ header {
     color: #333;
 }
 
+.main-style .formFileMultiple {
+    height: 44px;
+}
+
 .main-style .btn-outline-info {
     background-color: #9370DB;
     color: white;
@@ -85,6 +69,7 @@ header {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .main-style .btn-outline-info:hover {
