@@ -1,0 +1,118 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E6E6FA;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #4B0082;
+  color: #f4f4f4;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.media img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.main-style {
+    max-width: 500px;
+    margin: 100px auto 50px;
+    padding: 40px;
+    background-color: #D8BFD8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-style fieldset {
+    border: none;
+}
+
+.main-style legend {
+    text-align: left;
+    font-size: 2em;
+    color: #4B0082;
+}
+
+.main-style .form-group {
+    margin-bottom: 20px;
+}
+
+.main-style .form-control-label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.main-style .form-control-lg {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #E6E6FA;
+    color: #333;
+    border-color: #9370DB;
+    width: 150%;
+}
+
+.main-style .form-check-input {
+    margin-right: 10px;
+}
+
+.main-style .form-check-label {
+    color: #333;
+}
+
+.main-style .btn-outline-info {
+    background-color: #9370DB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.main-style .btn-outline-info:hover {
+    background-color: #8364C9;
+}
+
+.main-style .text-muted a {
+    color: #4B0082;
+    text-decoration: none;
+}
+
+.main-style .text-muted a:hover {
+    text-decoration: underline;
+}
+
+.border-top {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.border-top .text-muted a {
+    color: #4B0082;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.border-top .text-muted a:hover {
+    text-decoration: underline;
+}
