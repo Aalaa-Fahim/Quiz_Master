@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     color: #333;
@@ -17,7 +17,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+*/
 .media {
     display: flex;
     align-items: center;
