@@ -2,10 +2,8 @@
 {% block body %}
 <div class="container">
   <h1>Add Question</h1>
-  <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url_for('add_question') }}"
-    enctype="multipart/form-data">
+  <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url_for('add_question') }}">
     {{ form.hidden_tag() }}
-    {{ form.quiz_id }}
     <fieldset class="form-group">
       <legend>Question Details</legend>
 
@@ -36,8 +34,9 @@
         {{ form.category(class="form-control") }}
         {% endif %}
       </div>
+
       <div class="form-group">
-        {{ form.submit(class="btn btn-outline-info")}}
+        {{ form.submit(class="btn btn-outline-info") }}
       </div>
     </fieldset>
   </form>

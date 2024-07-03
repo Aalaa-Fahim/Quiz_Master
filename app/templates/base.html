@@ -21,9 +21,9 @@
   {% endblock %}
 
   {% if title %}
-  <title>QuizzeMaster - {{ title }}</title>
+  <title>QuizzMaster - {{ title }}</title>
   {% else %}
-  <title>QuizzeMaster</title>
+  <title>QuizzMaster</title>
   {% endif %}
   <title>{% block title %}{% endblock %}</title>
 </head>
@@ -46,6 +46,8 @@
         {% if current_user.is_authenticated %}
         <a href="{{ url_for('account') }}">Account</a>
         <a href="{{ url_for('logout') }}">Log out</a>
+        <a href="{{ url_for('add_question')}}">Add Question</a>
+
         {% else %}
         <a href="{{ url_for('login') }}">Log In</a>
         <a href="{{ url_for('register') }}">Sign Up</a>

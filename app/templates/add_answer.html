@@ -1,29 +1,33 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
-  <h1>Add Answer</h1>
-  <form method="POST">
+  <h1>Add Answers</h1>
+  <form method="POST" action="{{ url_for('add_answer', question_id=question_id) }}">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
-      {{ form.answer.label(class="form-label") }}
-      {% if form.answer.errors %}
-      {{ form.answer(class="form-control is-invalid") }}
-      <div class="invalid-feedback">
-        {% for error in form.answer.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </div>
-      {% else %}
-      {{ form.answer(class="form-control") }}
-      {% endif %}
-      <div class="form-check">
-        {{ form.is_correct(class="form-check-input") }}
-        <label class="form-check-label">Is Correct Answer?</label>
-        <div class="form-group">
-          {{ form.submit(class="btn btn-outline-info")}}
+      {% for answer_form in form.answers %}
+      <div class="form-group">
+        {{ answer_form.answer.label(class="form-control-label") }}
+        {% if answer_form.answer.errors %}
+        {{ answer_form.answer(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in answer_form.answer.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
         </div>
+        {% else %}
+        {{ answer_form.answer(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="form-check">
+        {{ answer_form.is_correct(class="form-check-input") }}
+        <label class="form-check-label">Is Correct Answer?</label>
+      </div>
+      {% endfor %}
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info")}}
+      </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Submit Answer</button>
   </form>
 </div>
 {% endblock %}
