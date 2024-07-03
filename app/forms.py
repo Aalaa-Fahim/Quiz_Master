@@ -9,7 +9,7 @@ from flask_login import current_user
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=4, max=12)])
-    email = StringField('Email address',
+    email = StringField('Email Address',
                         validators=[DataRequired(), Email(), Length(min=14, max=30)])
     password = PasswordField('Password',
                              validators=[DataRequired(), Length(min=4, max=16)])
@@ -29,7 +29,7 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    email = StringField('Email address',
+    email = StringField('Email Address',
                         validators=[DataRequired(), Email(), Length(min=14, max=30)])
     password = PasswordField('Password',
                              validators=[DataRequired(), Length(min=4, max=16)])
@@ -40,7 +40,7 @@ class LoginForm(FlaskForm):
 class UpdateForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=4, max=12)])
-    email = StringField('Email address',
+    email = StringField('Email Address',
                         validators=[DataRequired(), Email(), Length(min=14, max=30)])
     profile_pic = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit_btn = SubmitField('Update')
@@ -58,7 +58,7 @@ class UpdateForm(FlaskForm):
                 raise ValidationError('This email already exists! Try Again.')
 
 class QuizSelectCatForm(FlaskForm):
-    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Programming', 'Programming')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('History', 'History'), ('Science', 'Science'), ('Programming', 'Programming')], validators=[DataRequired()])
     submit_btn = SubmitField('Start Quiz')
 
 
@@ -68,7 +68,7 @@ class QuizForm(FlaskForm):
 
 class InputQuestionForm(FlaskForm):
     question = TextAreaField('Question', validators=[DataRequired()])
-    category = SelectField('Category', choices=[('Science', 'Science'), ('History', 'History'), ('Programming', 'Programming')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('History', 'History'), ('Science', 'Science'), ('Programming', 'Programming')], validators=[DataRequired()])
     #quiz_id = HiddenField('Quiz ID', validators=[DataRequired()])
     submit = SubmitField('Add a Question')
 
