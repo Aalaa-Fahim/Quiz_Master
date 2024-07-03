@@ -1,45 +1,53 @@
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #E6E6FA;
-  color: #333;
-  overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 header {
-  background-color: #4B0082;
-  color: #f4f4f4;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* .container {
+    max-width: 900px;
+    margin: 120px auto 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+*/
 .media {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 20px;
 }
 
-.media img {
-    border-radius: 50%;
-    margin-right: 20px;
+.account-img {
     width: 150px;
     height: 150px;
-    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
-.main-style {
-    max-width: 500px;
-    margin: 100px auto 50px;
-    padding: 40px;
-    background-color: #D8BFD8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.account-heading {
+    font-size: 2em;
+    color: #343a40;
+}
+
+.text-secondary {
+    font-size: 1.2em;
+    color: #6c757d;
 }
 
 .main-style fieldset {
@@ -48,27 +56,28 @@ header {
 
 .main-style legend {
     text-align: left;
-    font-size: 2em;
-    color: #4B0082;
+    font-size: 1.5em;
+    color: #343a40;
+    margin-bottom: 20px;
 }
 
 .main-style .form-group {
     margin-bottom: 20px;
 }
 
+.main-style .form-label,
 .main-style .form-control-label {
     font-size: 1.1em;
-    color: #333;
+    color: #343a40;
+    font-weight: bold;
 }
 
 .main-style .form-control-lg {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ced4da;
     border-radius: 5px;
-    background-color: #E6E6FA;
-    color: #333;
-    border-color: #9370DB;
-    width: 150%;
+    background-color: #fff;
+    color: #495057;
 }
 
 .main-style .form-check-input {
@@ -76,11 +85,11 @@ header {
 }
 
 .main-style .form-check-label {
-    color: #333;
+    color: #343a40;
 }
 
 .main-style .btn-outline-info {
-    background-color: #9370DB;
+    background-color: #343a40;
     color: white;
     border: none;
     border-radius: 5px;
@@ -89,26 +98,21 @@ header {
 }
 
 .main-style .btn-outline-info:hover {
-    background-color: #8364C9;
+    background-color: #23272b;
 }
 
-.main-style .text-muted a {
-    color: #4B0082;
-    text-decoration: none;
-}
-
-.main-style .text-muted a:hover {
-    text-decoration: underline;
+.flash-message {
+    margin-bottom: 20px;
 }
 
 .border-top {
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+    border-top: 1px solid #ced4da;
+    padding-top: 20px;
     text-align: center;
 }
 
 .border-top .text-muted a {
-    color: #4B0082;
+    color: #343a40;
     text-decoration: none;
     font-weight: bold;
 }
