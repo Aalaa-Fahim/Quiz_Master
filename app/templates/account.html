@@ -1,6 +1,10 @@
 {% extends "base.html" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='account.css') }}">
+{% endblock %}
+
 {% block body %}
-<!-- <div class="content"> styles to be added -->
 <div class="media">
   <img class="rounded-circle account-img small-img img-fluid" src="{{ img }}">
   <div class="media-body">
