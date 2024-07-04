@@ -174,21 +174,24 @@ def add_question():
         return redirect(url_for('add_answer', question_id=new_question.id))
     return render_template('add_question.html', title='Add Question', form=form)
 
-@app.route('/add_answer/<int:question_id>', methods=['GET', 'POST'])
-@login_required
-def add_answer(question_id):
-    form = MultipleAnswersForm()
+@app.route('/add_answer', methods=['GET', 'POST'])
+def add_answer():
+    form = InputAnswerForm()
     if form.validate_on_submit():
-        for answer_form in form.answers:
-            answer_text = answer_form.answer.data
-            is_correct = answer_form.is_correct.data
-            # Save each answer to the database
-            answer = Answer(text=answer_text, is_correct=is_correct, question_id=question_id)
-            db.session.add(answer)
+        question_id = form.question_id.data
+        answer_text = form.answer.data
+        is_correct = form.is_correct.data
+
+        # Assuming the Answer model has fields question_id, text, and is_correct
+        answer = Answer(question_id=question_id, text=answer_text, is_correct=is_correct)
+        db.session.add(answer)
         db.session.commit()
-        flash('Your answers have been added!', 'success')
-        return redirect(url_for('add_question'))
-    return render_template('add_answer.html', title='Add Answers', form=form, question_id=question_id)
+
+        flash('Answer added successfully!')
+        return redirect(url_for('add_answer'))
+
+    return render_template('add_answer.html', form=form)
+
 
 @app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required

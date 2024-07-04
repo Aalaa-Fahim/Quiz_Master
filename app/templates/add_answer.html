@@ -4,6 +4,20 @@
   <h1>Add Answers</h1>
   <form method="POST" action="{{ url_for('add_answer', question_id=question_id) }}">
     {{ form.hidden_tag() }}
+    <!-- Display question_id field -->
+    <div class="form-group">
+      {{ form.question_id.label(class="form-control-label") }}
+      {{ form.question_id(class="form-control") }}
+      {% if form.question_id.errors %}
+      <div class="invalid-feedback">
+        {% for error in form.question_id.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Display answer input fields -->
     <fieldset class="form-group">
       {% for answer_form in form.answers %}
       <div class="form-group">
@@ -24,10 +38,12 @@
         <label class="form-check-label">Is Correct Answer?</label>
       </div>
       {% endfor %}
-      <div class="form-group">
-        {{ form.submit(class="btn btn-outline-info")}}
-      </div>
     </fieldset>
+
+    <!-- Submit button -->
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info")}}
+    </div>
   </form>
 </div>
 {% endblock %}
