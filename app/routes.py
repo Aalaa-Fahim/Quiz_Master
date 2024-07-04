@@ -106,7 +106,8 @@ def take_quiz(quiz_id):
         return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
     return render_template('take_quiz.html', title='Take Quiz', quiz=quiz, questions=questions, form=form)
 
-=> The new added code """
+    
+=> The new added code"""
 @app.route('/start_quiz', methods=['GET', 'POST'])
 @login_required
 def start_quiz():
@@ -175,29 +176,56 @@ def add_question():
     return render_template('add_question.html', title='Add Question', form=form)
 
 @app.route('/add_answer', methods=['GET', 'POST'])
+@login_required  # Ensure only logged-in users can add answers
 def add_answer():
-    form = InputAnswerForm()
+    question_id = request.args.get('question_id', type=int)
+    if not question_id:
+        flash('No question ID provided', 'danger')
+        return redirect(url_for('index'))  # Redirect to index or appropriate page
+
+    form = MultipleAnswersForm()
+
+    # Pre-fill question_id for each answer form
+    for answer_form in form.answers:
+        answer_form.question_id.data = question_id
+
     if form.validate_on_submit():
-        question_id = form.question_id.data
-        answer_text = form.answer.data
-        is_correct = form.is_correct.data
+        try:
+            for answer_form in form.answers:
+                answer_text = answer_form.answer.data
+                is_correct = answer_form.is_correct.data
 
-        # Assuming the Answer model has fields question_id, text, and is_correct
-        answer = Answer(question_id=question_id, text=answer_text, is_correct=is_correct)
-        db.session.add(answer)
-        db.session.commit()
+                # Create an instance of InputAnswer and add it to the session
+                answer = InputAnswer(text=answer_text, is_correct=is_correct, question_id=question_id)
+                db.session.add(answer)
 
-        flash('Answer added successfully!')
-        return redirect(url_for('add_answer'))
+            db.session.commit()
+            flash('Answers added successfully!', 'success')
+            return redirect(url_for('add_answer', question_id=question_id))
 
-    return render_template('add_answer.html', form=form)
+        except Exception as e:
+            db.session.rollback()
+            flash(f'An error occurred: {e}', 'danger')
 
+    if form.errors:
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(f"Error in {getattr(form, field).label.text}: {error}", 'danger')
+
+    return render_template('add_answer.html', form=form, question_id=question_id)
+
+
+"""last try code"""
 
 @app.route('/quiz_categories', methods=['GET', 'POST'])
 @login_required
 def quiz_categories():
-    return render_template('quiz_categories.html')
-
+    form = QuizSelectCatForm()
+    if form.validate_on_submit():
+        category = form.category.data
+        return redirect(url_for('quiz', category=category))  # Pass selected category to quiz route
+    return render_template('quiz_categories.html', form=form)
+"""
 @app.route('/quiz/<category>', methods=['GET', 'POST'])
 @login_required
 def quiz(category):
@@ -213,6 +241,25 @@ def quiz(category):
         db.session.commit()
         return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
     return render_template('quiz.html', title=f'{category.capitalize()} Quiz', quiz=quiz, questions=quiz.questions, form=form)
+"""
+@app.route('/quiz/<category>', methods=['GET', 'POST'])
+@login_required
+def quiz(category):
+    quiz = Quiz.query.filter_by(category=category).first()  # Fetch quiz based on category
+    if not quiz:
+        flash(f'No quizzes available for the selected category.', 'warning')
+        return redirect(url_for('quiz_categories'))
+
+    form = QuizForm()
+    if form.validate_on_submit():
+        score = calculate_score(request.form, quiz.questions)
+        quiz_result = QuizResult(user_id=current_user.id, quiz_id=quiz.id, score=score)
+        db.session.add(quiz_result)
+        db.session.commit()
+        return redirect(url_for('view_score', quiz_result_id=quiz_result.id))
+
+    return render_template('quiz.html', title=f'{quiz.category.capitalize()} Quiz', quiz=quiz, form=form)
+
 
 @app.route('/view_score/<int:quiz_result_id>', methods=['GET'])
 @login_required

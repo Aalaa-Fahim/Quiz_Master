@@ -58,7 +58,7 @@ class UpdateForm(FlaskForm):
                 raise ValidationError('This email already exists! Try Again.')
 
 class QuizSelectCatForm(FlaskForm):
-    category = SelectField('Category', choices=[('History', 'History'), ('Science', 'Science'), ('Programming', 'Programming')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('history', 'History'), ('science', 'Science'), ('programming', 'Programming')], validators=[DataRequired()])
     submit_btn = SubmitField('Start Quiz')
 
 
