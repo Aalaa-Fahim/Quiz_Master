@@ -1,14 +1,22 @@
 {% extends "base.html" %}
+
 {% block body %}
 <div class="container">
+  <!-- Title of the page -->
   <h1>Add Question</h1>
+
+  <!-- Form to add a new question -->
   <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url_for('add_question') }}">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
+      <!-- Legend for the form fieldset -->
       <legend>Question Details</legend>
 
+      <!-- Form group for the question text -->
       <div class="form-group">
+        <!-- Label for the question input field -->
         {{ form.question.label(class="form-control-label") }}
+        <!-- Displaying errors if the question input field is invalid -->
         {% if form.question.errors %}
         {{ form.question(class="form-control is-invalid") }}
         <div class="invalid-feedback">
@@ -17,12 +25,16 @@
           {% endfor %}
         </div>
         {% else %}
+        <!-- Input field for the question if no errors -->
         {{ form.question(class="form-control") }}
         {% endif %}
       </div>
 
+      <!-- Form group for the category selection -->
       <div class="form-group">
+        <!-- Label for the category selection field -->
         {{ form.category.label(class="form-control-label") }}
+        <!-- Displaying errors if the category selection field is invalid -->
         {% if form.category.errors %}
         {{ form.category(class="form-control is-invalid") }}
         <div class="invalid-feedback">
@@ -31,10 +43,12 @@
           {% endfor %}
         </div>
         {% else %}
+        <!-- Selection field for the category if no errors -->
         {{ form.category(class="form-control") }}
         {% endif %}
       </div>
 
+      <!-- Submit button for the form -->
       <div class="form-group">
         {{ form.submit(class="btn btn-outline-info") }}
       </div>
