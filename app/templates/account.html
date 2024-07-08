@@ -6,8 +6,10 @@
 
 {% block body %}
 <div class="media">
+  <!-- User profile image -->
   <img class="rounded-circle account-img small-img img-fluid" src="{{ img }}">
   <div class="media-body">
+    <!-- User's username and email display -->
     <h2 class="account-heading">{{ current_user.username }}</h2>
     <p class="text-secondary">{{ current_user.email }}</p>
   </div>
@@ -16,7 +18,9 @@
   <form class="row g-3 needs-validation" novalidate method="POST" , action="" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
+      <!-- Form legend for Account Info section -->
       <legend>Account Info</legend>
+      <!-- Username form group -->
       <div class="form-group">
         {{ form.username.label(class="form-label") }}
         {% if submitted %}
@@ -36,6 +40,7 @@
         {% endif %}
 
       </div>
+      <!-- Email form group -->
       <div class="form-group">
         {{ form.email.label(class="form-control-label") }}
         {% if submitted %}
@@ -53,6 +58,7 @@
         {{ form.email(class="form-control form-control-lg") }}
         {% endif %}
       </div>
+      <!-- Profile picture upload form group -->
       <div class="form-group mb-3">
         <label for="{{ form.profile_pic.id }}" class="form-label">{{ form.profile_pic.label }}</label>
         {{ form.profile_pic(class="form-control formFileMultiple") }}
@@ -62,7 +68,7 @@
         {% endfor %}
         {% endif %}
       </div>
-
+      <!-- Submit button form group -->
       <div class="form-group ">
         {{ form.submit_btn(class="btn btn-outline-info")}}
       </div>
