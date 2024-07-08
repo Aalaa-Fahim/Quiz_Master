@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
+  <!-- Introduction section -->
   <div class="intro">
     <h1>Welcome to QuizMaster</h1>
     <p>Challenge Your Knowledge with Fun and Engaging Quizzes!</p>
   </div>
 
+  <!-- About section -->
   <div class="about">
     <div class="about-text">
       <h2>About QuizMaster</h2>
@@ -16,11 +18,13 @@
         Challenge yourself with our diverse range of quizzes and track your progress with detailed analytics.
       </p>
     </div>
+    <!-- image of About section -->
     <div class="about-image">
       <img src="{{ url_for('static', filename='images/welcome.jpg') }}" alt="Welcome to QuizMaster">
     </div>
   </div>
 
+  <!-- Features section -->
   <div id="features" class="features">
     <div class="feature">
       <img src="{{ url_for('static', filename='images/solving.jpg') }}" alt="Personalized Quizzes">
@@ -44,6 +48,7 @@
     </div>
   </div>
 
+  <!-- Call to Action section -->
   <div class="cta">
     <a href="{{ url_for('start_quiz') }}" class="btn btn-primary">Start a Quiz Now</a>
     <p>Discover, Play, and Master Quizzes!</p>
