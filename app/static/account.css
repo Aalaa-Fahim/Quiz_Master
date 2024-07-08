@@ -1,9 +1,11 @@
+/* Media class for aligning the profile image and user information */
 .media {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
+/* Styling for the profile image */
 .account-img {
     width: 150px;
     height: 150px;
@@ -11,6 +13,7 @@
     margin-right: 20px;
 }
 
+/* Main style for form section with padding and background */
 .main-style {
     max-width: 500px;
     margin: 150px auto 50px;
@@ -20,74 +23,114 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Remove border from fieldset within main-style */
 .main-style fieldset {
     border: none;
 }
 
+/* Style the legend within main-style */
 .main-style legend {
+    /* Align text to the left */
     text-align: left;
+    /* Set font size to 1.5em */
     font-size: 1.5em;
+    /* Set text color to indigo */
     color: #4B0082;
+    /* Add margin at the bottom */
     margin-bottom: 20px;
+    /* Make the font bold */
     font-weight: bold;
 }
 
+/* Style form groups within main-style */
 .main-style .form-group {
+    /* Add margin at the bottom */
     margin-bottom: 20px;
 }
 
+/* Style labels within main-style */
 .main-style .form-control-label {
     font-size: 1.2em;
+    /* Set text color to dark gray */
     color: #333;
 }
 
+/* Style large form controls within main-style */
 .main-style .form-control-lg {
+    /* Add padding inside the input */
     padding: 10px;
+    /* Set border properties */
     border: 1px solid #ccc;
     border-radius: 5px;
+    /* Set background color to light lavender */
     background-color: #E6E6FA;
+    /* Set text color to dark gray */
     color: #333;
+    /* Set border color to medium purple */
     border-color: #9370DB;
 }
 
+/* Style checkboxes within main-style */
 .main-style .form-check-input {
+    /* Add margin to the right */
     margin-right: 10px;
 }
 
+/* Style checkbox labels within main-style */
 .main-style .form-check-label {
+    /* Set text color to dark gray */
     color: #333;
 }
 
+/* Set height of file input within main-style */
 .main-style .formFileMultiple {
     height: 44px;
 }
 
+/* Style outline info button within main-style */
 .main-style .btn-outline-info {
+    /* Set background color to medium purple */
     background-color: #9370DB;
+    /* Set text color to white */
     color: white;
+    /* Remove border */
     border: none;
+    /* Set border radius for rounded corners */
     border-radius: 5px;
+    /* Add padding inside the button */
     padding: 10px 20px;
+    /* Change cursor to pointer on hover */
     cursor: pointer;
+    /* Add margin at the top */
     margin-top: 10px;
 }
 
+/* Change background color on hover for outline info button */
 .main-style .btn-outline-info:hover {
     background-color: #8364C9;
 }
 
+/* Style for elements with border-top class */
 .border-top {
+    /* Add top border */
     border-top: 1px solid #ccc;
+    /* Add padding at the top */
     padding-top: 20px;
+    /* Center-align text */
     text-align: center;
 }
 
+/* Style links within border-top class */
 .border-top .text-muted a {
+    /* Set link color to indigo */
     color: #4B0082;
+    /* Remove underline from links */
     text-decoration: none;
+    /* Make the font bold */
     font-weight: bold;
 }
 
+/* Add underline on hover for links within border-top */
 .border-top .text-muted a:hover {
     text-decoration: underline;
 }
