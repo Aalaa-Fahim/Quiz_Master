@@ -1,53 +1,82 @@
+/* Styling for the body element */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #E6E6FA;
-    color: #333;
-    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif; /* Font family for the entire body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #E6E6FA; /* Light lavender background color */
+    color: #333; /* Dark gray text color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Column direction for flex items */
+    min-height: 100vh; /* Minimum height to fill the viewport */
 }
 
+/* Styling for the header */
 header {
-    background-color: #4B0082;
-    color: #f4f4f4;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #4B0082; /* Indigo background color */
+    color: #f4f4f4; /* Light gray text color */
+    padding: 10px 20px; /* Padding inside the header */
+    position: fixed; /* Fixed position at the top */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's on top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Styling for the main content container */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px 20px;
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align */
+    padding: 60px 20px 20px; /* Padding with extra space at the top for the header */
+    flex: 1; /* Allow container to grow and fill available space */
 }
 
+/* Styling for card elements */
 .card {
-    background: #D8BFD8;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
+    background: #D8BFD8; /* Light purple background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin around each card */
+    padding: 20px; /* Padding inside each card */
+    text-align: center; /* Center align text */
 }
 
+/* Styling for card titles */
 .card-title {
-    margin-top: 10px;
-    color: #333;
+    margin-top: 10px; /* Space above title */
+    color: #333; /* Dark gray text color */
 }
 
+/* Styling for card text */
 .card-text {
-    margin: 15px 0;
-    color: #555;
+    margin: 15px 0; /* Vertical margins */
+    color: #555; /* Medium gray text color */
 }
 
+/* Styling for primary buttons */
 .btn-primary {
-    background-color: #9370DB;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+    background-color: #9370DB; /* Medium purple background */
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Footer styling */
+footer {
+    background-color: #4B0082; /* Indigo background color */
+    color: #f4f4f4; /* Light gray text color */
+    text-align: center; /* Center align text */
+    padding: 5px 0; /* Vertical padding */
+    width: 100%; /* Full width */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    flex-direction: column; /* Column layout */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Styling for paragraphs within the footer */
+footer p {
+    margin: 5px 0; /* Vertical margins */
 }
