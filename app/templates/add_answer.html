@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
+  <!-- Title of the page -->
   <h1>Add Answers</h1>
-
+  <!-- Flash messages for success or error notifications -->
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
   <div class="alert-messages">
@@ -13,10 +14,13 @@
   {% endif %}
   {% endwith %}
 
+  <!-- Form to add answers to a question -->
   <form method="POST" action="{{ url_for('add_answer', question_id=question_id) }}">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
+      <!-- Loop through each answer form in the form.answers field -->
       {% for answer_form in form.answers %}
+      <!-- Question ID form group -->
       <div class="form-group">
         {{ answer_form.question_id.label(class="form-control-label") }}
         {% if answer_form.question_id.errors %}
@@ -30,6 +34,7 @@
         {{ answer_form.question_id(class="form-control") }}
         {% endif %}
       </div>
+      <!-- Answer text form group -->
       <div class="form-group">
         {{ answer_form.answer.label(class="form-control-label") }}
         {% if answer_form.answer.errors %}
@@ -43,11 +48,13 @@
         {{ answer_form.answer(class="form-control") }}
         {% endif %}
       </div>
+      <!-- Checkbox to mark the answer as correct -->
       <div class="form-check">
         {{ answer_form.is_correct(class="form-check-input") }}
         <label class="form-check-label">Is Correct Answer?</label>
       </div>
       {% endfor %}
+      <!-- Submit button for the form -->
       <div class="form-group">
         {{ form.submit(class="btn btn-outline-info") }}
       </div>
