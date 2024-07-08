@@ -25,8 +25,8 @@ QuizMaster is a sophisticated quiz application designed to provide an engaging a
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python, Flask
+- **Frontend:** HTML, CSS
+- **Backend:** Python, Flask, Bootstrap
 - **Database:** SQLite (for local development)
 - **Version Control:** Git
 - **Deployment:** [Heroku](https://www.heroku.com/)
