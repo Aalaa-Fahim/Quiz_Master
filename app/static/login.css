@@ -1,136 +1,150 @@
+/* Styling for the main form container */
 .main-style {
-    max-width: 500px;
-    margin: 100px auto 50px;
-    padding: 40px;
-    background-color: #D8BFD8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Maximum width of the container */
+    margin: 100px auto 50px; /* Center align with vertical margins */
+    padding: 40px; /* Padding inside the container */
+    background-color: #D8BFD8; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Styling for fieldsets within the main container */
 .main-style fieldset {
-    border: none;
+    border: none; /* Remove default border */
 }
 
+/* Styling for legends within fieldsets */
 .main-style legend {
-    text-align: left;
-    font-size: 2em;
-    color: #4B0082;
+    text-align: left; /* Left align text */
+    font-size: 2em; /* Increase font size */
+    color: #4B0082; /* Indigo text color */
 }
 
+/* Styling for form groups */
 .main-style .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below each group */
 }
 
+/* Styling for form control labels */
 .main-style .form-control-label {
-    font-size: 1.1em;
-    color: #333;
+    font-size: 1.1em; /* Increase font size */
+    color: #333; /* Dark gray text color */
 }
 
+/* Styling for large form controls */
 .main-style .form-control-lg {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #E6E6FA;
-    color: #333;
-    border-color: #9370DB;
-    width: 150%;
+    padding: 10px; /* Padding inside form control */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #E6E6FA; /* Lavender background color */
+    color: #333; /* Dark gray text color */
+    border-color: #9370DB; /* Medium purple border color */
+    width: 150%; /* Increased width */
 }
 
-/* .main-style .form-control-lg.is-invalid {
-    border-color: #dc3545;
-}
-
-.main-style .form-control-lg.is-valid {
-    border-color: #28a745;
-}*/
-
+/* Styling for form check inputs */
 .main-style .form-check-input {
-    margin-right: 10px;
+    margin-right: 10px; /* Space to the right */
 }
 
+/* Styling for form check labels */
 .main-style .form-check-label {
-    color: #333;
+    color: #333; /* Dark gray text color */
 }
 
+/* Styling for outline info buttons */
 .main-style .btn-outline-info {
-    background-color: #9370DB;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
+    background-color: #9370DB; /* Medium purple background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Hover effect for outline info buttons */
 .main-style .btn-outline-info:hover {
-    background-color: #8364C9;
+    background-color: #8364C9; /* Darker purple background */
 }
 
+/* Styling for muted text links */
 .main-style .text-muted a {
-    color: #4B0082;
-    text-decoration: none;
+    color: #4B0082; /* Indigo text color */
+    text-decoration: none; /* Remove underline */
 }
 
+/* Hover effect for muted text links */
 .main-style .text-muted a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Styling for top border */
 .border-top {
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    text-align: center;
+    border-top: 1px solid #ccc; /* Light gray top border */
+    padding-top: 10px; /* Padding at the top */
+    text-align: center; /* Center align text */
 }
 
+/* Styling for text-muted links within top border */
 .border-top .text-muted a {
-    color: #4B0082;
-    text-decoration: none;
-    font-weight: bold;
+    color: #4B0082; /* Indigo text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
 }
 
+/* Hover effect for text-muted links within top border */
 .border-top .text-muted a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Footer styling */
 footer {
-    background-color: #4B0082;
-    color: #f4f4f4;
-    text-align: center;
-    padding: 5px 0;
-    width: 100%;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background-color: #4B0082; /* Indigo background color */
+    color: #f4f4f4; /* Light gray text color */
+    text-align: center; /* Center align text */
+    padding: 5px 0; /* Vertical padding */
+    width: 100%; /* Full width */
+    bottom: 0; /* Position at the bottom */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    flex-direction: column; /* Column layout */
 }
 
+/* Styling for paragraphs within the footer */
 footer p {
-    margin: 5px 0;
+    margin: 5px 0; /* Vertical margins */
 }
 
+/* Styling for footer content container */
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Wrap items if needed */
 }
 
+/* Styling for footer links */
 .footer-links {
-    display: flex;
-    gap: 20px;
+    display: flex; /* Flexbox layout */
+    gap: 20px; /* Space between links */
 }
 
+/* Styling for individual footer links */
 .footer-links a {
-    color: #f4f4f4;
-    text-decoration: none;
+    color: #f4f4f4; /* Light gray text color */
+    text-decoration: none; /* Remove underline */
 }
 
+/* Styling for social media links */
 .social-media {
-    display: flex;
-    gap: 15px;
+    display: flex; /* Flexbox layout */
+    gap: 15px; /* Space between items */
 }
 
+/* Styling for social media icons */
 .social-media a img {
-    width: 35px;
-    height: 30px;
+    width: 35px; /* Icon width */
+    height: 30px; /* Icon height */
 }
