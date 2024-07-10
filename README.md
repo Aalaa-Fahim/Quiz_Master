@@ -1,5 +1,5 @@
 # QuizMaster App
-![logo](app/static/images/logo.PNG)
+![logo](app/static/images/logo.png)
 **QuizMaster: An engaging and interactive platform to test your knowledge and track your progress.**
 Creating QuizMaster has been a deeply rewarding journey fueled by a passion for learning and a drive to make it more interactive and accessible. The inspiration stemmed from a personal love for quizzes and a desire to provide a platform that combines fun with learning.
 
