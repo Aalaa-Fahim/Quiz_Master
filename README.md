@@ -1,6 +1,7 @@
 # QuizMaster App
-
+![Home Page](app/static/images/logo.PNG)
 **QuizMaster: An engaging and interactive platform to test your knowledge and track your progress.**
+Creating QuizMaster has been a deeply rewarding journey fueled by a passion for learning and a drive to make it more interactive and accessible. The inspiration stemmed from a personal love for quizzes and a desire to provide a platform that combines fun with learning.
 
 ## Table of Contents
 
@@ -15,6 +16,7 @@
 ## Introduction
 
 QuizMaster is a sophisticated quiz application designed to provide an engaging and interactive experience for users. It allows users to test their knowledge on various topics, receive real-time feedback, and track their performance through detailed analytics. This project aims to offer a seamless and enjoyable way to learn and challenge oneself.
+In the next iteration, we envision expanding QuizMaster with more personalized quiz recommendations, advanced analytics to track progress more comprehensively, and a competitive leaderboard to foster a sense of community and competition. Adding features like collaborative quizzes and real-time multiplayer modes are also in the pipeline.
 
 ## Features
 
@@ -82,9 +84,13 @@ To get a local copy up and running, follow these steps:
 Here are some screenshots of the QuizMaster App:
 
 ### Home Page
-![Home Page](app/static/images/QuizMaster_home1.JPG)
+![Home Page](app/static/images/1.PNG)
 
-![Home Page](app/static/images/QuizMaster_home2.JPG)
+![Home Page](app/static/images/2.PNG)
+
+![Home Page](app/static/images/3.PNG)
+
+![Home Page](app/static/images/4.PNG)
 
 ## Contact
 
