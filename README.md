@@ -28,8 +28,8 @@ In the next iteration, we envision expanding QuizMaster with more personalized q
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS
-- **Backend:** Python, Flask, Bootstrap
+- **Frontend:** HTML, CSS, Bootstrap
+- **Backend:** Python, Flask
 - **Database:** SQLite (for local development)
 - **Version Control:** Git
 - **Deployment:** [Heroku](https://www.heroku.com/)
